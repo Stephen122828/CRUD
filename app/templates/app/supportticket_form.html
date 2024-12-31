@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1>{% if ticket %}Edit Support Ticket{% else %}Create New Support Ticket{% endif %}</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if ticket %}Update Ticket{% else %}Create Ticket{% endif %}</button>
+    </form>
+
+    <br>
+    <a href="{% url 'supportticket_list' %}">Back to Ticket List</a>
+{% endblock %}

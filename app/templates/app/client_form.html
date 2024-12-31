@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1>{% if client %}Edit Client{% else %}Create New Client{% endif %}</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if client %}Update Client{% else %}Create Client{% endif %}</button>
+    </form>
+
+    <br>
+    <a href="{% url 'client_list' %}">Back to Client List</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="success-container">
+    <h2>Ticket Submitted Successfully!</h2>
+    <p>Thank you for submitting your support ticket. Our team will review it and get back to you shortly.</p>
+    <div class="buttons">
+        <a href="{% url 'services' %}" class="btn">Back to Services</a>
+        <a href="{% url 'create_ticket' %}" class="btn">Create Another Ticket</a>
+    </div>
+</div>
+
+
+{% endblock %}

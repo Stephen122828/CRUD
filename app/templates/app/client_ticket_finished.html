@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1>Our Tech will review your Concern, Please keep your lines open. Thank you!  </h1>
+
+    <p><strong>{{ client.name }}</strong> ({{ client.email }})</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes!</button>
+    </form>
+
+    <br>
+    <a href="{% url 'client_ticket_finished' %}">Go Back</a>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<div class="ticket-form-container">
+    <h2>Create New Support Ticket</h2>
+    
+    <form method="POST" class="ticket-form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="service_type">Service Type:</label>
+            <select id="service_type" name="service_type" class="form-control" required>
+                <option value="">Select a service...</option>
+                <option value="remote_support">24/7 Remote IT Support</option>
+                <option value="hardware">Hardware Support</option>
+                <option value="cybersecurity">Cybersecurity Services</option>
+                <option value="consultation">IT Consultation Services</option>
+                <option value="software">Custom Software Installation</option>
+                <option value="emergency">Emergency IT Support</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority" class="form-control" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="urgent">Urgent</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" class="form-control" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="contact_email">Contact Email:</label>
+            <input type="email" id="contact_email" name="contact_email" class="form-control" required>
+        </div>
+
+        <div class="form-buttons">
+            <button type="submit" class="submit-btn">Submit Ticket</button>
+            <a href="{% url 'services' %}" class="cancel-btn">Cancel</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

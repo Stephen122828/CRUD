@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<h1> Services Offered </h1>
+
+<ul>
+    <li>24/7 Remote IT Support</li>
+    <li>Hardware Support</li>
+    <li>Cybersecurity Services</li>
+    <li>IT Consultation Services</li>
+    <li>Custom Software Installation</li>
+    <li>Emergency IT Support</li>
+</ul>
+
+<a href="{% url 'client_create' %}" class="btn btn-primary">Fill out Information</a>
+
+
+{% endblock content %}

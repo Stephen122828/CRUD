@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1>Client List</h1>
+    
+    <ul>
+        {% for client in clients %}
+            <li>
+                <strong>{{ client.name }}</strong> ({{ client.email }})
+                <a href="{% url 'client_detail' client.pk %}">View</a> | 
+                
+            </li>
+<br><br><br>
+
+<a href="{% url 'supportticket_create' %}?service={{ service.id }}" class="btn btn-primary">Create Ticket</a>
+        {% endfor %}
+    </ul>
+{% endblock %}

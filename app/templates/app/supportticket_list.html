@@ -1,0 +1,16 @@
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1>Support Tickets</h1>
+    <a href="{% url 'supportticket_create' %}">Create New Support Ticket</a>
+    <ul>
+        {% for ticket in tickets %}
+            <li>
+                <strong>{{ ticket.client.name }} - {{ ticket.service.service_name }}</strong> - Status: {{ ticket.status }}
+                <a href="{% url 'supportticket_update' ticket.pk %}">Edit</a> |
+                <a href="{% url 'supportticket_delete' ticket.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

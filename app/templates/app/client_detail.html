@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% block content %}
+    <h1>Client Details</h1>
+
+  
+    <div>
+        <p><strong>Name:</strong> {{ client.name }}</p>
+        <p><strong>Email:</strong> {{ client.email }}</p>
+        <p><strong>Phone Number:</strong> {{ client.phone_number|default:"Not Provided" }}</p>
+    </div>
+
+   
+    <h2>Support Tickets</h2>
+    {% if tickets.exists %}
+        <ul>
+            {% for ticket in tickets %}
+                <li>
+                    <a href="{% url 'ticket_detail' ticket.id %}">{{ ticket.issue_description }}</a>
+                    (Status: {{ ticket.status }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No support tickets available for this client.</p>
+    {% endif %}
+
+    
+    <div>
+        <a href="{% url 'client_list' %}" class="btn btn-secondary">Back to Client List</a>
+    </div>
+{% endblock %}
