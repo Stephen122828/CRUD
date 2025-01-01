@@ -31,11 +31,7 @@ urlpatterns = [
     path('staff/<int:pk>/update/', views.StaffUpdateView.as_view(), name='staff_update'),
     path('staff/<int:pk>/delete/', views.StaffDeleteView.as_view(), name='staff_delete'),
 
-    # Payment URLs
-    path('payments/', views.PaymentListView.as_view(), name='payment_list'),
-    path('payments/create/', views.PaymentCreateView.as_view(), name='payment_create'),
-    path('payments/<int:pk>/update/', views.PaymentUpdateView.as_view(), name='payment_update'),
-    path('payments/<int:pk>/delete/', views.PaymentDeleteView.as_view(), name='payment_delete'),
+
 
 
 

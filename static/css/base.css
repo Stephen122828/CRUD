@@ -30,6 +30,7 @@ p{
     height: 70px; 
     width: auto;
     margin: 5px;
+    text-align: center;
 }
 
 .logo-container{
@@ -40,11 +41,11 @@ header {
     width: 100%;
     padding: 15px 0;
     
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease; 
     gap: 20px;
     
     display:flex ;
-    align-items: center; /* Aligns items vertically */
+    align-items: center; 
     justify-content: space-between;
 }
 
@@ -96,25 +97,24 @@ header a:hover {
 
 
 ul {
-    list-style-type: none; /* Remove default bullets */
-    padding-left: 0;       /* Remove the indentation */
+    list-style-type: none; 
+    padding-left: 0;      
 }
 
 ul li {
-    position: relative;     /* To place a custom bullet */
-    padding-left: 30px;     /* Space for the custom bullet */
-    font-size: 25px;
+    position: relative;     
+    padding-left: 30px;    
     color: #ffffff;
     line-height: 1.6;
 }
 
 ul li::before {
-    content: '\2022'; /* Unicode for bullet (•) */
+    content: '\2022'; 
     position: absolute;
     left: 0;
     top: 0;
-    color: #007BFF; /* Custom bullet color */
-    font-size: 20px; /* Custom bullet size */
+    color: #007BFF; 
+    font-size: 20px; 
 }
 
 
@@ -132,5 +132,5 @@ ul li::before {
 }
 
 .btn:hover {
-    background-color: #e7c735; /* Darker shade on hover */
+    background-color: #e7c735; 
 }

@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, ListView
-from .models import SupportTicket, Client, Staff, Payment
+from .models import SupportTicket, Client, Staff, Staff
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Client, Service, SupportTicket, Staff, Payment
-from .forms import ClientForm, SupportTicketForm, StaffForm, PaymentForm
+from .forms import ClientForm, SupportTicketForm, StaffForm 
 
 
 
@@ -96,27 +95,7 @@ class StaffDeleteView(DeleteView):
     success_url = reverse_lazy('staff_list')
 
 
-class PaymentListView(ListView):
-    model = Payment
-    template_name = 'app/payment_list.html'
-    context_object_name = 'payments'
 
-class PaymentCreateView(CreateView):
-    model = Payment
-    form_class = PaymentForm
-    template_name = 'app/payment_form.html'
-    success_url = reverse_lazy('payment_list')
-
-class PaymentUpdateView(UpdateView):
-    model = Payment
-    form_class = PaymentForm
-    template_name = 'app/payment_form.html'
-    success_url = reverse_lazy('payment_list')
-
-class PaymentDeleteView(DeleteView):
-    model = Payment
-    template_name = 'app/payment_confirm_delete.html'
-    success_url = reverse_lazy('payment_list')
 
 
 
